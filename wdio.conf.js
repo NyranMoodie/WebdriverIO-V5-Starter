@@ -8,6 +8,9 @@ exports.config = {
     // on a remote machine).
     runner: 'local',
     //
+    // Override default path ('/wd/hub') for chromedriver service.
+    path: '/',
+    //
     // ==================
     // Specify Test Files
     // ==================
@@ -64,7 +67,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -104,7 +107,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: ['chromedriver'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -121,7 +124,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
-    
+ 
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -191,13 +194,14 @@ exports.config = {
      * afterEach in Mocha)
      */
     // afterHook: function () {
-    // },
+    // }, 
     /**
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
-    // afterTest: function (test) {
+    // afterTest: function(test) {
     // },
+
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details

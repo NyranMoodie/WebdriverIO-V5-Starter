@@ -1,9 +1,9 @@
 const assert = require('assert');
 
-describe('Applitools Example Page', () => {
+describe('webdriver.io page', () => {
     it('should have the right title', () => {
-        browser.url('https://applitools.com/helloworld');
+        browser.url('https://webdriver.io');
         const title = browser.getTitle();
-        assert.equal(title, 'Applitools');
+        assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js');
     });
 });
